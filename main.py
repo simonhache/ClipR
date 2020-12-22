@@ -18,6 +18,7 @@ os.chdir(baseDirectory)
 
 correctionName = "_corrige_express"
 
+# Loop through every students
 for f in os.listdir():    
     os.chdir(baseDirectory + f)
     

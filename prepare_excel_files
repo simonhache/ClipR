@@ -12,9 +12,14 @@ import os
 import openpyxl as xl
 import xlsxwriter as xlw
 
+
+# Put the full path to the correction file
 baseDirectory = "/Users/simon/Desktop/Correction Simon /"
+
+# File with the correction material
 os.chdir(baseDirectory + "1 - BIO2043-FinalMaison-Corrige")
 
+# Find the excel file
 correctionName = "_corrige_express"
 
 sourceFile = xl.load_workbook("Final_E20_corrige-express.xlsx")
@@ -46,7 +51,7 @@ for filename in os.listdir():
             print(f"Adding new file : {newFileName}")
             newWorksheet = newFile.active
             
-            
+            # Loop through every active cells of the excel to copy in the new one
             for col in range(1, nCol+1):
                 for row in range(1, nRow+1):
                     data = sourceWorkBook.cell(row = row, column=col)
@@ -54,7 +59,8 @@ for filename in os.listdir():
                         #print(data.value)
                         pass
                     newWorksheet.cell(row = row, column=col).value = data.value
-                    
+              
+             
             #if input("Save the file? (y/n)  ") == "y":
             newFile.save(newFileName)
             #else:
