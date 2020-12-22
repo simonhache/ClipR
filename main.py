@@ -44,6 +44,7 @@ for f in os.listdir():
     
     print(f"Correcting {studentName} ({fileName})")
     with open(fileName, "r") as f:
+        
         # Loop into the excel file 1 row at a time
         for row in range(1, nRows+1):
             questionCell = xlSheet.cell(row = row, column = questionCol)
@@ -68,7 +69,6 @@ for f in os.listdir():
                     clearConsole()
                     print("\u0332".join(f"Question : {questionCell.value} /{valueCell.value}"))
                     print("\n" *5)
-                    os.system('clear')
                     cnt += 1
                     answer.append("           " + f.readline() + "        ") 
                     
