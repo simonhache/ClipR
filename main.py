@@ -113,6 +113,6 @@ for f in os.listdir():
                         answer = answer[-int(rewindPosition):]
                         print("".join(answer))
                         positionCheck = input("Is it ok now? (y/n) :  ") == "y"
-                
+        xlWorkBook.close()        
                 
             
