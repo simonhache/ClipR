@@ -90,7 +90,8 @@ for f in os.listdir():
                 
                 while correction > valueCell.value:
                     print(f"{questionCell.value} /{valueCell.value} : \n {''.join(answer)} \n")
-                    correction = input(f"How many points ? (/{valueCell.value}):  ")
+                    correction = input("-"*25 + f"   How many points ? (/{valueCell.value}) : ")
+                    
                     try :
                         correction = float(correction)
                     except Exception:
